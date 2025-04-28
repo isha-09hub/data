@@ -1,0 +1,24 @@
+from nltk import ngrams
+from nltk import FreqDist
+
+sentence="I fucking hate this fucking world".split()
+
+unigrams=list(ngrams(sentence,1))
+bigrams=list(ngrams(sentence,2))
+trigrams=list(ngrams(sentence,3))
+
+unigram_freq=FreqDist(unigrams)
+bigram_freq=FreqDist(bigrams)
+trigram_freq=FreqDist(trigrams)
+
+print(f"UNIGRAMS")
+for unigram, frequency in unigram_freq.items():
+    print(f"{unigram}: {frequency}")
+
+print(f"Bigrams")
+for bigram, frquency in bigram_freq.items():
+    print(f"{bigram}: {frequency}")
+
+print(f"Trigrams")
+for trigram, frequency in trigram_freq.items():
+    print(f"{trigram}: {frequency}")    
